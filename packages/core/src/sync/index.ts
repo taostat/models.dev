@@ -14,10 +14,12 @@ import { cortecs } from "./providers/cortecs.js";
 import { crossmodel } from "./providers/crossmodel.js";
 import { deepinfra } from "./providers/deepinfra.js";
 import { digitalocean } from "./providers/digitalocean.js";
+import { edenai } from "./providers/edenai.js";
 import { empiriolabs } from "./providers/empiriolabs.js";
 import { google } from "./providers/google.js";
 import { hyper } from "./providers/hyper.js";
 import { huggingface } from "./providers/huggingface.js";
+import { inceptron } from "./providers/inceptron.js";
 import { kilo } from "./providers/kilo.js";
 import { llmgateway } from "./providers/llmgateway.js";
 import { mergeGateway } from "./providers/merge-gateway.js";
@@ -28,6 +30,7 @@ import { openrouter } from "./providers/openrouter.js";
 import { ovhcloud } from "./providers/ovhcloud.js";
 import { pioneer } from "./providers/pioneer.js";
 import { requesty } from "./providers/requesty.js";
+import { saygm } from "./providers/saygm.js";
 import { tinfoil } from "./providers/tinfoil.js";
 import { vercel } from "./providers/vercel.js";
 import { venice } from "./providers/venice.js";
@@ -121,10 +124,12 @@ export const providers: {
   crossmodel: SyncProvider<any>;
   deepinfra: SyncProvider<any>;
   digitalocean: SyncProvider<any>;
+  edenai: SyncProvider<any>;
   empiriolabs: SyncProvider<any>;
   google: SyncProvider<any>;
   hyper: SyncProvider<any>;
   huggingface: SyncProvider<any>;
+  inceptron: SyncProvider<any>;
   kilo: SyncProvider<any>;
   llmgateway: SyncProvider<any>;
   "merge-gateway": SyncProvider<any>;
@@ -135,6 +140,7 @@ export const providers: {
   ovhcloud: SyncProvider<any>;
   pioneer: SyncProvider<any>;
   requesty: SyncProvider<any>;
+  saygm: SyncProvider<any>;
   tinfoil: SyncProvider<any>;
   vercel: SyncProvider<any>;
   venice: SyncProvider<any>;
@@ -150,10 +156,12 @@ export const providers: {
   crossmodel,
   deepinfra,
   digitalocean,
+  edenai,
   empiriolabs,
   google,
   hyper,
   huggingface,
+  inceptron,
   kilo,
   llmgateway,
   "merge-gateway": mergeGateway,
@@ -164,6 +172,7 @@ export const providers: {
   ovhcloud,
   pioneer,
   requesty,
+  saygm,
   tinfoil,
   vercel,
   venice,
@@ -174,8 +183,10 @@ export const providers: {
 export const groups = {
   aggregators: [
     "crossmodel",
+    "edenai",
     "empiriolabs",
     "huggingface",
+    "inceptron",
     "kilo",
     "llmgateway",
     "merge-gateway",
@@ -186,7 +197,7 @@ export const groups = {
     "vercel",
   ],
   cloudflare: ["cloudflare-workers-ai"],
-  direct: ["ambient", "anthropic", "baseten", "chutes", "cortecs", "deepinfra", "digitalocean", "google", "hyper", "openai", "ovhcloud", "pioneer", "tinfoil", "venice", "wandb", "xai"],
+  direct: ["ambient", "anthropic", "baseten", "chutes", "cortecs", "deepinfra", "digitalocean", "google", "hyper", "openai", "ovhcloud", "pioneer", "saygm", "tinfoil", "venice", "wandb", "xai"],
 } as const;
 
 type ProviderID = keyof typeof providers;
